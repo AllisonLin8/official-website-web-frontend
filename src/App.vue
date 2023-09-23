@@ -1,30 +1,22 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <el-container direction="vertical" style="width: 100vw; height: 100vh;">
+    <Navbar />
+    <el-main style="height: calc(100vh - 59px); padding: 0; background: rgba(245, 173, 53, .09);">
+      <router-view />
+    </el-main>
+  </el-container>
 </template>
 
+<script setup>
+import Navbar from '@/components/Navbar'
+</script>
+
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+*{
+  margin: 0;
+  padding: 0;
 }
-
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+.el-tabs__item {
+  font-size: 18px !important;
 }
 </style>
